@@ -1,0 +1,31 @@
+package me.zebley.autofurnace.ui;
+
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+
+import me.zebley.autofurnace.utils.Utils;
+
+public class TestUI {
+	
+	public static Inventory inv;
+	public static String inventory_name;
+	public static int inv_rows = 4 * 9;
+	
+	public static void initialize(){
+		inventory_name = Utils.chat("&6&lAutoFurnace Fuel");
+		
+		inv = Bukkit.createInventory(null, inv_rows);
+		
+	}
+	
+	public static Inventory GUI (Player p){
+		Inventory toReturn = Bukkit.createInventory(null, inv_rows, inventoryName);
+		
+		Utils.createItem(inv, 160:15, 1, 1, "", "");
+		
+		toReturn.setContents(inv.getContents());
+		return toReturn;
+	}
+
+}
